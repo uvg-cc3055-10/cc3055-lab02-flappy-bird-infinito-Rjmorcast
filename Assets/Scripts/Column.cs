@@ -11,10 +11,12 @@ public class Column : MonoBehaviour {
 	}
 	
 	void Update () {
+        if (!GameController.instance.GameOver) { 
         transform.Translate(Vector3.left * scrollingSpeed * Time.deltaTime);
         if (transform.position.x < -10)
         {
             Destroy(gameObject);
         }
     }
+}
 }
